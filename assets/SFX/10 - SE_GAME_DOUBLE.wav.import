@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blgqvukk3y76s"
+path="res://.godot/imported/10 - SE_GAME_DOUBLE.wav-dbefee6b8985e17d5f3d329a69361700.sample"
+
+[deps]
+
+source_file="res://assets/SFX/10 - SE_GAME_DOUBLE.wav"
+dest_files=["res://.godot/imported/10 - SE_GAME_DOUBLE.wav-dbefee6b8985e17d5f3d329a69361700.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

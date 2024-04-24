@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://buw6lichhi8ck"]
+
+[ext_resource type="Script" path="res://scenes/Global.gd" id="1_bikcs"]
+[ext_resource type="AudioStream" uid="uid://cv3c1kuiq0fts" path="res://assets/Tetris.mp3" id="2_7yl5y"]
+[ext_resource type="AudioStream" uid="uid://k7dlsre2aao2" path="res://assets/SFX/心電図1.mp3" id="3_tk4aq"]
+
+[node name="Global" type="Node2D"]
+script = ExtResource("1_bikcs")
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_7yl5y")
+bus = &"Music"
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
+
+[node name="Clear_SFX" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
+
+[node name="Warning_SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tk4aq")
+bus = &"SFX"
+
+[connection signal="finished" from="Warning_SFX" to="." method="_on_warning_sfx_finished"]

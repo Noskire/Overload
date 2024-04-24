@@ -1,0 +1,234 @@
+[gd_scene load_steps=10 format=3 uid="uid://psjnbhu2tahx"]
+
+[ext_resource type="Script" path="res://scenes/hud.gd" id="1_04t8d"]
+[ext_resource type="Texture2D" uid="uid://bwxneirljy70c" path="res://assets/tetrominoes.png" id="1_2707k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xosvn"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.490196, 0.45098, 0.564706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42puf"]
+bg_color = Color(0.65098, 0.780392, 0.905882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adx1n"]
+bg_color = Color(1, 0.796078, 0.843137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngyvp"]
+bg_color = Color(0.784314, 0.862745, 0.745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_le0nx"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.490196, 0.45098, 0.564706, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a08xs"]
+texture = ExtResource("1_2707k")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_l1uyk"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_a08xs")
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_04t8d")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -350.0
+offset_right = -128.0
+offset_bottom = -126.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "NEXT PIECE:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Control/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_xosvn")
+
+[node name="ScoreLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1536.0
+offset_top = 452.0
+offset_right = 1792.0
+offset_bottom = 497.0
+theme_override_font_sizes/font_size = 30
+text = "SCORE: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1536.0
+offset_top = 625.0
+offset_right = 1792.0
+offset_bottom = 675.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_42puf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_adx1n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ngyvp")
+text = "NEW GAME"
+
+[node name="Menu" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1536.0
+offset_top = 700.0
+offset_right = 1792.0
+offset_bottom = 750.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_42puf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_adx1n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ngyvp")
+text = "MENU"
+
+[node name="MenuPanel" type="Panel" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -270.0
+offset_right = 480.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_le0nx")
+
+[node name="VBox2" type="VBoxContainer" parent="Control/MenuPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -170.0
+offset_right = 128.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Menu" type="Label" parent="Control/MenuPanel/VBox2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "MENU"
+horizontal_alignment = 1
+
+[node name="Empty" type="Label" parent="Control/MenuPanel/VBox2"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Control/MenuPanel/VBox2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Music Vol.:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Control/MenuPanel/VBox2"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Label2" type="Label" parent="Control/MenuPanel/VBox2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Move Sensitivity:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider2" type="HSlider" parent="Control/MenuPanel/VBox2"]
+layout_mode = 2
+max_value = 10.0
+value = 10.0
+
+[node name="Label3" type="Label" parent="Control/MenuPanel/VBox2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Rotate Sensitivity:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider3" type="HSlider" parent="Control/MenuPanel/VBox2"]
+layout_mode = 2
+max_value = 10.0
+
+[node name="GameOverLabel" type="Label" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.5
+offset_top = 112.0
+offset_right = 119.5
+offset_bottom = 170.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "GAME OVER!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_l1uyk")
+rendering_quadrant_size = 32
+format = 2
+layer_0/name = "board"
+layer_1/name = "active"
+layer_1/tile_data = PackedInt32Array()
+
+[connection signal="button_up" from="Control/Menu" to="." method="_on_menu_button_up"]
+[connection signal="value_changed" from="Control/MenuPanel/VBox2/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Control/MenuPanel/VBox2/HSlider2" to="." method="_on_h_slider_2_value_changed"]
+[connection signal="value_changed" from="Control/MenuPanel/VBox2/HSlider3" to="." method="_on_h_slider_3_value_changed"]

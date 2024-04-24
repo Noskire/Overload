@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bs34whl2hsfla"
+path="res://.godot/imported/12 - SE_GAME_TETRIS.wav-7ac812d5aa67b51960ae3d3838bb2639.sample"
+
+[deps]
+
+source_file="res://assets/SFX/12 - SE_GAME_TETRIS.wav"
+dest_files=["res://.godot/imported/12 - SE_GAME_TETRIS.wav-7ac812d5aa67b51960ae3d3838bb2639.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
